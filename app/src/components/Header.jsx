@@ -1,8 +1,9 @@
 import React from "react";
-import { useLocation } from "react-router";
+import { Navigate, useLocation, useNavigate } from "react-router";
 
 const Header = () => {
   const maLocation = useLocation();
+  const navigate = useNavigate();
 
   const pathMatchRoute = (route) => {
     return route === maLocation.pathname ? true : "";
@@ -16,6 +17,7 @@ const Header = () => {
             src="https://static.rdc.moveaws.com/images/logos/rdc-logo-default.svg"
             alt="logo"
             className="h-5 cursor-pointer"
+            onClick={() => navigate("/")}
           />
         </div>
         <div>
@@ -24,13 +26,15 @@ const Header = () => {
               className={`py-3 text-sm font-semibold text-gray-400 border-b-[3px] cursor-pointer border-b-transparent ${
                 pathMatchRoute("/") && "text-black border-b-red-500"
               }`}
+              onClick={() => navigate("/")}
             >
               Home
             </li>
             <li
-              className={`py-3 text-sm font-semibold text-gray-400 border-b-[3px]  cursor-pointer border-b-transparent
-               ${pathMatchRoute("/offers") && "text-black border-b-red-500"}
-               `}
+              className={`py-3 text-sm font-semibold text-gray-400 border-b-[3px]  cursor-pointer border-b-transparent ${
+                pathMatchRoute("/offers") && "text-black border-b-red-500"
+              }`}
+              onClick={() => navigate("/offers")}
             >
               Offers
             </li>
@@ -38,6 +42,7 @@ const Header = () => {
               className={`py-3 text-sm font-semibold text-gray-400 border-b-[3px]  cursor-pointer border-b-transparent ${
                 pathMatchRoute("/sign-in") && "text-black border-b-red-500"
               }`}
+              onClick={() => navigate("/sign-in")}
             >
               SignIn
             </li>
