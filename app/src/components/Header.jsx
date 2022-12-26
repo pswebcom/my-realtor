@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 const Header = () => {
   const maLocation = useLocation();
