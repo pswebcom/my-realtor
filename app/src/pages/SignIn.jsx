@@ -82,6 +82,15 @@ const SignIn = () => {
                 </Link>
               </p>
             </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white font-medium text-sm rounded shadow-lg hover:bg-blue-700 hover:shadow-lg transition duration-150 ease-in-out py-3 active:bg-blue:800"
+            >
+              Sign In
+            </button>
+            <div className="my-4 before:border-t before:flex-1  after:flex-1 flex  after:border-t items-center before:border-gray-300 after:border-gray-300">
+              <p className="text-center">OR</p>
+            </div>
           </form>
         </div>
       </div>
